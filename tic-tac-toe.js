@@ -58,4 +58,24 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     });
+
+const newGameButton = document.querySelector(".btn");
+    
+    if (newGameButton) {
+        newGameButton.addEventListener("click", () => {
+
+            gameState = Array(9).fill("");
+            xTurn = true;
+            gameActive = true;
+
+            squares.forEach(square => {
+                square.textContent = "";
+                square.classList.remove("X", "O");
+            });
+
+            const statusDiv = document.getElementById("status");
+            statusDiv.textContent = "Move your mouse over a square and click to play an X or an O.";
+            statusDiv.classList.remove("you-won");
+        });
+    }
 });
