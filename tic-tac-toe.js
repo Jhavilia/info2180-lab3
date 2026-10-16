@@ -9,6 +9,16 @@ document.addEventListener("DOMContentLoaded", function () {
     let xTurn = true;
 
     squares.forEach((square, index) => {
+        
+        square.addEventListener("mouseenter", () => {
+            square.classList.add("hover");
+        });
+
+        square.addEventListener("mouseleave", () => {
+            square.classList.remove("hover");
+        });
+        
+        
         square.addEventListener("click", () => {
             if (gameState[index] === "") {
                 const currentPlayer = xTurn ? "X" : "O";
